@@ -1,24 +1,30 @@
 # Housing-Project
 
-This project contains two directories-
+## Overview
 
-1. Question-1
-
-It has the solution to first question from the pdf.
-It has a sql file which has table creation queries.
-It has a text file which describes the entities considered.
-
-2. Question-2
-
-It has a .ipynb file which has code to second quesetion from the pdf.
-It has two directories-
-
-data   - It contains the csv files provided initially.
-output - It contains the final csv after processing.
+This respository contains solution to two questions-
+- Database Schema Desiging
+- Data Preprocessing 
 
 
-Project Directory Structure-
+1. **Question-1**
 
+- It has the solution to first question from the pdf.
+- It has a [sql file](Question-1/Question-1.sql) which has table creation queries.
+- It has a [text file](Question-1/Question-1.txt) which describes the entities considered.
+
+2. **Question-2**
+
+- It has a [.ipynb](Question-2/Question-2.ipynb) file which has code to second quesetion from the pdf.
+- It has two directories-
+    - [data](Question-2/data)     - It contains the csv files provided initially.
+    - [output](Question-2/output) - It contains the final csv after processing.
+
+
+## Project Directory Structure
+
+
+```
 ├── Analytics Engineer - Technical Interview.pdf
 ├── Question-1
 │   ├── Question-1.sql
@@ -34,3 +40,4 @@ Project Directory Structure-
 │       ├── output-invalid-rows.csv
 │       └── output-valid-rows.csv
 └── README.md
+```
