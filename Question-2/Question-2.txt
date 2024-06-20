@@ -1,0 +1,23 @@
+Question 2 
+
+- Importing the libraires
+- Loading the csv files into dataframe
+- Identifying and discarding the duplicate emails.
+- Merging the data frames based on their common column
+
+  ___________________________________________________________________________________________
+ | Dataframe 1  | Dataframe 2    | on                              | how  | Output Dataframe |
+ |--------------|----------------|---------------------------------|------|------------------|
+ | persons_data | occupancy_data | personId                        | left | merged_df        |
+ | merged_df    | inventory_data | BuildingName, roomName, bedName | left | merged_df        |
+  ___________________________________________________________________________________________
+
+- Selecting required headers in the dataframe
+- Aggregating the display IDs for each major name into a list.
+- Implementing function of major mappings.
+- Renaming the required columns
+- Concatenating first and last name to full name
+- Splitting address into address1, address2, city, state, zip
+- Select valid and invalid rows
+- Store them in respective csv files
+
