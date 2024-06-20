@@ -1,0 +1,67 @@
+Question 1-
+
+Design a database schema that can handle the operations of a room reservation system for a global hotel chain. Ensure the schema is scalable, maintainable, and supports necessary business operations.
+
+Explanation-
+
+Entities
+
+Hotel
+
+hotel_id: SERIAL PRIMARY KEY [Auto-incrementing integer for unique identification]
+name: VARCHAR(255) NOT NULL [String to store the hotel name]
+address, city, state, country, postal_code: VARCHAR [Strings to store location details]
+phone_number: VARCHAR(20) [String to store contact number, considering different formats globally]
+email: VARCHAR(255) [String to store the contact email]
+created_at, updated_at: TIMESTAMP [Timestamps to track record creation and updates]
+
+Room
+
+room_id: SERIAL PRIMARY KEY [Auto-incrementing integer for unique identification]
+hotel_id: INT REFERENCES Hotel(hotel_id) ON DELETE CASCADE [Foreign key linking to the hotel]
+room_number: VARCHAR(20) NOT NULL [String to store room number, ensuring uniqueness within the hotel]
+type: VARCHAR(50) NOT NULL [String to categorize room types (e.g., single, double, suite)]
+capacity: INT NOT NULL [Integer to indicate the maximum number of guests]
+price_per_night: DECIMAL(10, 2) NOT NULL [Decimal to store room price with precision for currency values]
+status: VARCHAR(50) NOT NULL [String to represent the room's status (e.g., available, occupied)]
+created_at, updated_at: TIMESTAMP [Timestamps for tracking record creation and updates]
+
+Guest
+
+guest_id: SERIAL PRIMARY KEY [Auto-incrementing integer for unique identification]
+first_name, last_name: VARCHAR(255) NOT NULL [Strings to store guest names]
+email: VARCHAR(255) NOT NULL UNIQUE [String for unique guest email]
+phone_number: VARCHAR(20) [String for contact number]
+address, city, state, country, postal_code: VARCHAR [Strings for guest address details]
+created_at, updated_at: TIMESTAMP [Timestamps for record creation and updates]
+
+Reservation
+
+reservation_id: SERIAL PRIMARY KEY [Auto-incrementing integer for unique identification]
+guest_id: INT REFERENCES Guest(guest_id) ON DELETE CASCADE [Foreign key linking to the guest]
+hotel_id: INT REFERENCES Hotel(hotel_id) ON DELETE CASCADE [Foreign key linking to the hotel]
+room_id: INT REFERENCES Room(room_id) ON DELETE CASCADE [Foreign key linking to the room]
+check_in_date, check_out_date: DATE NOT NULL [Dates to indicate reservation period]
+number_of_guests: INT NOT NULL [Integer for the number of guests]
+status: VARCHAR(50) NOT NULL [String to represent reservation status (e.g., confirmed, checked-in)]
+created_at, updated_at: TIMESTAMP [Timestamps for record tracking]
+
+Payment
+
+payment_id: SERIAL PRIMARY KEY [Auto-incrementing integer for unique identification]
+reservation_id: INT REFERENCES Reservation(reservation_id) ON DELETE CASCADE [Foreign key linking to the reservation]
+amount: DECIMAL(10, 2) NOT NULL [Decimal for payment amount]
+payment_date: TIMESTAMP NOT NULL [Timestamp for the payment date]
+payment_method: VARCHAR(50) NOT NULL [String for the payment method (e.g., credit card)]
+status: VARCHAR(50) NOT NULL [String for payment status (e.g., completed, pending)]
+created_at, updated_at: TIMESTAMP [Timestamps for tracking payment records]
+
+Data Types
+
+Primary Keys (SERIAL): Auto-incrementing integers ensure unique identification and fast indexing.
+Strings (VARCHAR): Variable character fields accommodate text data of varying lengths.
+Integers (INT): Efficient storage for numeric values like IDs, capacities, and guest counts.
+Decimals (DECIMAL): Accurate representation of currency values.
+Timestamps (TIMESTAMP): Precise recording of creation and update times.
+Dates (DATE): Specific storage for dates without time components.
+
