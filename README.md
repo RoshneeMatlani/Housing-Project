@@ -17,7 +17,7 @@ This respository contains solution to two questions-
 2. **Question-2**
 
 - It has a [.ipynb file](Question-2/Question-2.ipynb) which has code to second quesetion from the pdf.
-- It ahs a [text file](Question-2/Question-2.txt) which has flow of the .ipynb file.
+- It has a [text file](Question-2/Question-2.txt) which has flow of the .ipynb file.
 - It has two directories-
     - [data](Question-2/data)     - It contains the csv files provided initially.
     - [output](Question-2/output) - It contains the final csv after processing.
@@ -30,7 +30,7 @@ This respository contains solution to two questions-
 ├── Analytics Engineer - Technical Interview.pdf
 ├── Question-1
 │   ├── Question-1.png
-│   └── Question-1.sql
+│   ├── Question-1.sql
 │   └── Question-1.txt
 ├── Question-2
 │   ├── Question-2.ipynb
