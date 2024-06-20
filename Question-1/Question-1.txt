@@ -65,3 +65,19 @@ Decimals (DECIMAL): Accurate representation of currency values.
 Timestamps (TIMESTAMP): Precise recording of creation and update times.
 Dates (DATE): Specific storage for dates without time components.
 
+Relations
+
+Hotel to Room:
+One-to-Many (One hotel can have multiple rooms).
+
+Hotel to Reservation:
+One-to-Many (One hotel can have multiple reservations).
+
+Room to Reservation:
+One-to-Many (One room can have multiple reservations).
+
+Guest to Reservation:
+One-to-Many (One guest can make multiple reservations).
+
+Reservation to Payment:
+One-to-One (One reservation can have one payment record).
